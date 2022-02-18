@@ -23,7 +23,7 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('detail/{slug}', [DetailController::class, 'index']);
 
-Route::get('/comment/{id}', [CommentController::class, 'index']);
+Route::get('/comment/{id}', [CommentController::class, 'index'])->middleware('auth');
 Route::post('/comment/store', [CommentController::class, 'store']);
 Route::get('/comment-manag/delete/{id}', [CommentController::class, 'delete']);
 
